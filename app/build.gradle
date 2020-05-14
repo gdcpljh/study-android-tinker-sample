@@ -94,7 +94,7 @@ dependencies {
 apply plugin: 'com.tencent.tinker.patch'
 
 def bakPath = file("${buildDir}/bakApk/")
-def appName = "app-debug-0511-15-53-25"
+def appName = "app-debug-0514-13-51-55"
 
 /**
  * you can use assembleRelease to build you base apk
