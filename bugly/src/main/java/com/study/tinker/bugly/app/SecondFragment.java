@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.study.tinker.bugly.R;
+import com.tencent.bugly.Bugly;
+import com.tencent.bugly.beta.Beta;
 
 public class SecondFragment extends Fragment {
 
@@ -30,8 +32,12 @@ public class SecondFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(SecondFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment);
-                throw new RuntimeException(view.getClass().getCanonicalName());
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

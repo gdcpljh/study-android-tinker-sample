@@ -8,8 +8,8 @@ android {
         applicationId "com.study.tinker.bugly"
         minSdkVersion 14
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,5 +35,13 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation('com.tencent.bugly:crashreport:latest.release')
+    /**
+     * 升级SDK已经集成crash上报功能，已经集成Bugly的用户需要注释掉原来Bugly的jcenter库；
+     * 已经配置过符号表的Bugly用户保留原有符号表配置；
+     * Bugly SDK（2.1.5及以上版本）已经将Java Crash和Native Crash捕获功能分开，
+     * 如果想使用NDK库，需要配置： compile 'com.tencent.bugly:nativecrashreport:latest.release'
+     */
+//    implementation('com.tencent.bugly:crashreport:latest.release')
+//    implementation('com.tencent.bugly:nativecrashreport:latest.release')
+    implementation('com.tencent.bugly:crashreport_upgrade:latest.release')
 }
